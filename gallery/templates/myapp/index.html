@@ -1,0 +1,80 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Blog</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+
+<div class="main-wrapper">
+
+    <h1 class="title">Today's Blog</h1>
+
+    {% if messages %}
+        {% for message in messages %}
+            <div class="message">
+                {{ message }}
+            </div>
+        {% endfor %}
+    {% endif %}
+
+    <div class="search-box">
+        <form method="GET">
+            <input type="text" name="q" placeholder="Search posts..." value="{{ query }}">
+            <button  type="submit">Search</button>
+        </form>
+    </div>
+
+    <div class="create-button">
+        <a style="border-radius: 20px;background:linear-gradient(to right, red, gold);" href="{% url 'create_post' %}">
+            + Create New Post
+        </a>
+    </div>
+
+    <div class="cards-container">
+
+        {% if not posts %}
+            <p style="text-align:center;">No posts found.</p>
+        {% endif %}
+
+        {% for post in posts %}
+        <div class="card">
+
+            {% if post.image %}
+                <div class="card-image">
+                    <img src="{{ post.image.url }}">
+                </div>
+            {% endif %}
+
+            <div class="card-content">
+
+                <h3>
+                    <a href="{% url 'post_detail' post.id %}">
+                        {{ post.title }}
+                    </a>
+                </h3>
+
+                <p>
+                    {{ post.content|truncatewords:15 }}
+                </p>
+
+                <a class="read-more" href="{% url 'post_detail' post.id %}">
+                    Read More →
+                </a>
+
+                <div class="date">
+                    Posted on {{ post.created_at }}
+                </div>
+
+            </div>
+
+        </div>
+        {% endfor %}
+
+    </div>
+
+</div>
+
+</body>
+</html>

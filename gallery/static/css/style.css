@@ -1,0 +1,177 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: black;
+    color: white;
+}
+
+/* Main centered layout */
+.main-wrapper {
+    max-width: 1000px;
+    margin: 40px auto;
+}
+
+/* Title */
+.title {
+    text-align: center;
+}
+
+/* Create button */
+.create-button {
+    text-align: right;
+    margin-bottom: 20px;
+}
+
+.create-button a {
+    background: white;
+    color: black;
+    padding: 8px 14px;
+    text-decoration: none;
+}
+
+/* Grid Layout */
+.cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+/* Card */
+.card {
+    background: #1e1e1e;
+    box-shadow: 0 3px 8px rgba(255,255,255,0.05);
+    border-radius: 20px;
+    border: 1px solid brown;
+    border-width: 5px;
+    overflow: hidden;
+}
+
+.card-image img {
+    width: 100%;
+    height: 200px;
+    object-fit: contain;
+}
+
+/* Card Content */
+.card-content {
+    padding: 15px;
+}
+
+.card-content h3 {
+    margin-top: 0;
+}
+
+.card-content a {
+    color: #4da6ff;
+    text-decoration: none;
+}
+
+/* Read more */
+.read-more {
+    display: inline-block;
+    margin-top: 10px;
+    color: #4da6ff;
+    text-decoration: none;
+}
+
+/* Date */
+.date {
+    margin-top: 10px;
+    font-size: 13px;
+    color: #bbbbbb;
+}
+
+/* Detail Page */
+.detail-wrapper {
+    width: 70%;
+    margin: 40px auto;
+}
+
+.detail-title {
+    text-align: center;
+}
+
+.detail-date {
+    text-align: center;
+    color: #bbbbbb;
+    margin-bottom: 20px;
+}
+
+.detail-image {
+    width: 100%;
+    max-height: 500px;
+    object-fit: contain;
+    margin-bottom: 20px;
+}
+
+.detail-content {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.detail-actions {
+    margin-top: 20px;
+}
+
+.detail-actions a {
+    color: #4da6ff;
+    text-decoration: none;
+}
+
+/* Forms */
+.form-wrapper {
+    width: 50%;
+    margin: 40px auto;
+}
+
+input, textarea {
+    background: #1e1e1e;
+    color: white;
+    border: 1px solid #555;
+    padding: 8px;
+}
+
+form button {
+    padding: 8px 15px;
+    background: white;
+    color: black;
+    border: none;
+    cursor: pointer;
+}
+
+/* Messages */
+.message {
+    background: #1e4620;
+    color: #d4edda;
+    padding: 10px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Search Box */
+.search-box {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.search-box input {
+    width: 260px;
+    padding: 8px;
+    background: #1e1e1e;
+    color: white;
+    border-radius: 20px;
+    border: 1px solid #555;
+}
+
+.search-box button {
+    padding: 8px 14px;
+    background: white;
+    color: black;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+}
+
+.search-box button:hover {
+    opacity: 0.8;
+}

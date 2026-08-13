@@ -1,0 +1,38 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ post.title }}</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+
+<div class="detail-wrapper">
+
+    <h1 class="detail-title">{{ post.title }}</h1>
+
+    <div class="detail-date">
+        Posted on {{ post.created_at }}
+    </div>
+
+    {% if post.image %}
+        <img src="{{ post.image.url }}" class="detail-image">
+    {% endif %}
+
+    <div class="detail-content">
+        {{ post.content }}
+    </div>
+
+    <div class="detail-actions">
+        <a href="{% url 'update_post' post.id %}">✏ Edit</a>
+        |
+        <a href="{% url 'delete_post' post.id %}">🗑 Delete</a>
+    </div>
+
+    <br>
+    <button style="background:linear-gradient(to right,white,red); border-radius: 20px;"><a href="{% url 'product_list' %}">⬅ Back to Home</a></button>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,45 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Create Post</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+
+<div class="form-wrapper">
+
+    <h2>Create New Post</h2>
+
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+
+        <div>
+            <label>Title</label><br>
+            {{ form.title }}
+        </div>
+
+        <br>
+
+        <div>
+            <label>Content</label><br>
+            {{ form.content }}
+        </div>
+
+        <br>
+
+        <div>
+            <label>Image</label><br>
+            {{ form.image }}
+        </div>
+
+        <br>
+
+        <button style="background:linear-gradient(to right,blue, white); border-radius: 20px;" type="submit">Publish</button>
+        <button style="background:linear-gradient(to right,white,blue); border-radius: 20px;"><a href="{% url 'product_list' %}">Cancel</a></button>
+    </form>
+
+</div>
+
+</body>
+</html>
